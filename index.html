@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DigiDreamWeaver Labs | Claude-Native Agentic Creative Computing & DSP</title>
-  <meta name="description" content="DigiDreamWeaver Labs: Autonomous creative engineering and WebAudio DSP built natively on Anthropic Claude 3.5 and the Model Context Protocol (MCP). Founded by Miranda Komorny.">
+  <title>DigiDreamWeaver Labs | Miranda Komorny — Independent Systems, AI & Creative Computing</title>
+  <meta name="description" content="Official software portfolio of Miranda Komorny (DigiDreamWeaver Labs). Showcasing 28+ production builds across Autonomous AI Agents, WebAudio DSP, Voice Science, Procedural Vector Mathematics, and Systems Diagnostics.">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Tailwind CSS -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -27,17 +27,12 @@
               50: '#fdf8f6',
               100: '#f2e8e5',
               200: '#eaddd7',
-              300: '#e0cec7',
-              400: '#d2bab0',
-              500: '#d97706',
-              600: '#b45309',
               primary: '#d97706',
-              dark: '#08090d',
-              surface: '#0f1118',
-              card: '#141824',
-              border: '#23293d',
+              dark: '#07080c',
+              surface: '#0d101a',
+              card: '#121624',
+              border: '#1e253c',
               accent: '#d97706',
-              anthropic: '#cc785c'
             }
           }
         }
@@ -52,56 +47,68 @@
       font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     }
     .gradient-glow {
-      background: radial-gradient(circle at 50% 0%, rgba(204, 120, 92, 0.15) 0%, rgba(13, 15, 24, 0) 70%);
+      background: radial-gradient(circle at 50% 0%, rgba(217, 119, 6, 0.12) 0%, rgba(13, 16, 26, 0) 70%);
     }
     .card-hover {
-      transition: all 0.25s ease-in-out;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .card-hover:hover {
-      transform: translateY(-2px);
-      border-color: rgba(204, 120, 92, 0.5);
-      box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.7), 0 0 15px rgba(204, 120, 92, 0.1);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px -10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(217, 119, 6, 0.12);
     }
-    .code-glow {
-      text-shadow: 0 0 12px rgba(204, 120, 92, 0.4);
+    .filter-btn.active {
+      background-color: #d97706 !important;
+      color: #ffffff !important;
+      border-color: #f59e0b !important;
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3);
+    }
+    ::selection {
+      background-color: rgba(217, 119, 6, 0.35);
+      color: #fef3c7;
     }
   </style>
 </head>
 <body class="antialiased selection:bg-amber-700/30 selection:text-amber-200">
 
   <!-- Ambient Glow -->
-  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 gradient-glow pointer-events-none z-0"></div>
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[32rem] gradient-glow pointer-events-none z-0"></div>
 
   <!-- Navigation -->
-  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#07080c]/80 border-b border-[#1b1f2e]">
-    <div class="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-600 via-amber-700 to-amber-900 flex items-center justify-center font-bold text-white shadow-lg shadow-amber-900/30 text-sm">
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#07080c]/85 border-b border-[#1b2238]">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3.5">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 via-amber-600 to-rose-700 flex items-center justify-center font-extrabold text-white shadow-lg shadow-amber-950/40 text-sm font-mono tracking-wider">
           DW
         </div>
         <div>
-          <span class="font-bold tracking-tight text-white text-base">DigiDreamWeaver</span>
-          <span class="text-xs text-amber-500/80 font-mono ml-1.5 uppercase font-medium">Labs</span>
+          <div class="flex items-center gap-2">
+            <span class="font-extrabold tracking-tight text-white text-base">DigiDreamWeaver</span>
+            <span class="text-[10px] text-amber-400 font-mono uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-amber-950/60 border border-amber-600/30">LABS</span>
+          </div>
+          <span class="text-xs text-slate-400 font-medium block -mt-0.5">Miranda Komorny • Independent Engineering</span>
         </div>
       </div>
       
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-400">
-        <a href="#claude-mcp" class="hover:text-amber-400 transition-colors">Claude & MCP</a>
-        <a href="#architecture" class="hover:text-amber-400 transition-colors">Architecture</a>
-        <a href="#products" class="hover:text-amber-400 transition-colors">Products</a>
-        <a href="#economics" class="hover:text-amber-400 transition-colors">Token Economics</a>
-        <a href="#founder" class="hover:text-amber-400 transition-colors">Founder</a>
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#domains" class="hover:text-amber-400 transition-colors">Core Pillars</a>
+        <a href="#featured" class="hover:text-amber-400 transition-colors">Featured Systems</a>
+        <a href="#catalog" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+          <span>All Builds</span>
+          <span class="px-1.5 py-0.2 rounded-full bg-amber-500/20 text-amber-300 text-[11px] font-mono font-bold">28+</span>
+        </a>
+        <a href="#philosophy" class="hover:text-amber-400 transition-colors">Engineering Philosophy</a>
+        <a href="#founder" class="hover:text-amber-400 transition-colors">About</a>
       </nav>
 
       <div class="flex items-center gap-3">
-        <div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950/40 border border-amber-600/30 text-amber-400 text-xs font-mono">
-          <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-          Anthropic Startup Applicant
-        </div>
+        <a href="#catalog" 
+           class="hidden sm:inline-flex px-3.5 py-2 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs font-semibold font-mono transition-all">
+          Browse Catalog ↓
+        </a>
         <a href="https://github.com/mkomorny" target="_blank" rel="noopener noreferrer" 
-           class="px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-medium font-mono transition-all flex items-center gap-2">
+           class="px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-semibold font-mono transition-all flex items-center gap-2">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          GitHub
+          <span>GitHub</span>
         </a>
       </div>
     </div>
@@ -109,365 +116,1270 @@
 
   <!-- Hero Section -->
   <section class="relative pt-24 pb-20 px-6 max-w-7xl mx-auto z-10 text-center">
-    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-slate-300 text-xs font-mono mb-8 shadow-sm">
-      <span class="w-2 h-2 rounded-full bg-amber-500"></span>
-      <span>Engineered for Anthropic Claude 3.5 & Model Context Protocol (MCP)</span>
+    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#101424] border border-[#242e4d] text-slate-300 text-xs font-mono mb-8 shadow-sm">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span>Independent Engineering Laboratory & Software Portfolio</span>
     </div>
 
-    <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight max-w-5xl mx-auto leading-[1.1]">
-      Agentic Intelligence for <br/>
-      <span class="bg-gradient-to-r from-amber-400 via-amber-500 to-rose-400 bg-clip-text text-transparent">
-        Creative Audio & DSP Engineering
+    <h1 class="text-4xl sm:text-6xl md:text-7xl font-black text-white tracking-tight max-w-5xl mx-auto leading-[1.12]">
+      Independent Systems Across <br/>
+      <span class="bg-gradient-to-r from-amber-400 via-rose-400 to-cyan-400 bg-clip-text text-transparent">
+        Autonomous AI, Audio DSP, Voice & Vectors
       </span>
     </h1>
 
-    <p class="mt-7 text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-      Bridging professional Digital Audio Workstations (Ableton Live 12), WebAudio digital signal processing, and autonomous AI agents through native <strong class="text-white font-medium">Model Context Protocol</strong> bridges and 200k-token <strong class="text-white font-medium">Prompt Caching</strong> architectures.
+    <p class="mt-7 text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+      The personal software laboratory of <strong class="text-white font-semibold">Miranda Komorny</strong> (<em class="text-amber-400 not-italic font-medium">DigiDreamWeaver</em>). Designing production-grade autonomous agent loops, client-side WebAudio signal processing, speech acoustic phonetics, procedural vector graphics, and native desktop systems diagnostics.
     </p>
 
+    <!-- CTAs -->
     <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-      <a href="#claude-mcp" 
-         class="px-6 py-3.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-semibold text-sm shadow-lg shadow-amber-600/25 transition-all flex items-center gap-2">
-        <span>Explore Claude & MCP Architecture</span>
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      <a href="#catalog" 
+         class="px-7 py-3.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-semibold text-sm shadow-xl shadow-amber-600/25 transition-all flex items-center gap-2.5">
+        <span>Explore All 28+ Builds</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </a>
+      <a href="#domains" 
+         class="px-6 py-3.5 rounded-xl bg-[#0f1322] hover:bg-[#161c32] border border-[#232b47] text-slate-200 font-semibold text-sm transition-all flex items-center gap-2">
+        <span>View 5 Core Pillars</span>
       </a>
       <a href="https://github.com/mkomorny" target="_blank" rel="noopener noreferrer" 
-         class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 font-semibold text-sm transition-all flex items-center gap-2">
-        <span>View Code & Repositories</span>
+         class="px-6 py-3.5 rounded-xl bg-[#0f1322] hover:bg-[#161c32] border border-[#232b47] text-slate-200 font-semibold text-sm transition-all flex items-center gap-2">
+        <span>GitHub Profile →</span>
       </a>
     </div>
 
     <!-- Key Metrics Grid -->
     <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto text-left">
-      <div class="p-5 rounded-2xl bg-[#0d101a] border border-[#1b2238]">
-        <div class="text-2xl sm:text-3xl font-extrabold text-amber-400 font-mono">60+</div>
-        <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mt-1">Algorithmic DSP Modules</div>
-        <div class="text-xs text-slate-500 mt-1">Client-side WebAudio & WASM</div>
+      <div class="p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] shadow-lg">
+        <div class="text-3xl sm:text-4xl font-extrabold text-amber-400 font-mono">28+</div>
+        <div class="text-xs font-bold uppercase tracking-wider text-slate-300 mt-1.5">Production Builds</div>
+        <div class="text-xs text-slate-500 mt-1">Autonomous AI, Audio, Voice & Systems</div>
       </div>
-      <div class="p-5 rounded-2xl bg-[#0d101a] border border-[#1b2238]">
-        <div class="text-2xl sm:text-3xl font-extrabold text-amber-400 font-mono">200k</div>
-        <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mt-1">Token Context Window</div>
-        <div class="text-xs text-slate-500 mt-1">Holistic DAW project ingestion</div>
+      <div class="p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] shadow-lg">
+        <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 font-mono">5</div>
+        <div class="text-xs font-bold uppercase tracking-wider text-slate-300 mt-1.5">Core Disciplines</div>
+        <div class="text-xs text-slate-500 mt-1">Specialized cross-domain engineering</div>
       </div>
-      <div class="p-5 rounded-2xl bg-[#0d101a] border border-[#1b2238]">
-        <div class="text-2xl sm:text-3xl font-extrabold text-amber-400 font-mono">Up to 90%</div>
-        <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mt-1">Cost & Latency Reduction</div>
-        <div class="text-xs text-slate-500 mt-1">Via Anthropic Prompt Caching</div>
+      <div class="p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] shadow-lg">
+        <div class="text-3xl sm:text-4xl font-extrabold text-cyan-400 font-mono">0 ms</div>
+        <div class="text-xs font-bold uppercase tracking-wider text-slate-300 mt-1.5">Cloud Audio Latency</div>
+        <div class="text-xs text-slate-500 mt-1">Local-first DSP, WASM & desktop tools</div>
       </div>
-      <div class="p-5 rounded-2xl bg-[#0d101a] border border-[#1b2238]">
-        <div class="text-2xl sm:text-3xl font-extrabold text-amber-400 font-mono">0 ms</div>
-        <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mt-1">Cloud Audio Latency</div>
-        <div class="text-xs text-slate-500 mt-1">Local-first desktop execution</div>
+      <div class="p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] shadow-lg">
+        <div class="text-3xl sm:text-4xl font-extrabold text-purple-400 font-mono">GPL-3.0</div>
+        <div class="text-xs font-bold uppercase tracking-wider text-slate-300 mt-1.5">Copyleft Open Source</div>
+        <div class="text-xs text-slate-500 mt-1">Ethical, reciprocal software protection</div>
       </div>
     </div>
   </section>
 
-  <!-- Section 1: Claude-Native Architecture & MCP -->
-  <section id="claude-mcp" class="py-24 px-6 border-t border-[#161a29] bg-[#090b12] relative z-10">
+  <!-- Section 1: The 5 Core Engineering Pillars -->
+  <section id="domains" class="py-24 px-6 border-t border-[#161a29] bg-[#090b12] relative z-10">
     <div class="max-w-7xl mx-auto">
       <div class="max-w-3xl">
-        <div class="text-xs font-mono uppercase tracking-widest text-amber-500 font-semibold mb-2">Technical Depth & Ecosystem Alignment</div>
+        <div class="text-xs font-mono uppercase tracking-widest text-amber-500 font-semibold mb-2">Architectural Breadth</div>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Why Our Creative Engine Demands Anthropic Claude
+          Five Specialized Engineering Domains
         </h2>
         <p class="mt-4 text-slate-400 text-base leading-relaxed">
-          Generic LLM wrappers fail at music production and signal processing. High-level creative workflows demand stateful, large-context reasoning, zero-hallucination tool calling, and high-throughput bidirectional hardware control.
+          DigiDreamWeaver Labs bridges multiple high-leverage domains—combining autonomous intelligence with local-first desktop runtimes, mathematical rigor, and client-side signal processing.
         </p>
       </div>
 
-      <!-- Architecture Pipeline Diagram -->
-      <div class="mt-12 p-8 rounded-3xl bg-[#0e121e] border border-[#1e253c] shadow-2xl">
-        <div class="flex flex-col md:flex-row items-stretch gap-6">
-          
-          <!-- Column 1: Models -->
-          <div class="flex-1 p-6 rounded-2xl bg-[#131828] border border-[#242d48]">
-            <div class="flex items-center gap-2 mb-4">
-              <span class="w-3 h-3 rounded-full bg-amber-500"></span>
-              <h3 class="font-bold text-white text-sm font-mono uppercase tracking-wide">Foundation Reasoning</h3>
+      <div class="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Pillar 1: AI & Agents -->
+        <div class="p-7 rounded-3xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 flex items-center justify-center font-bold text-lg">🤖</span>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded bg-emerald-950/40 border border-emerald-600/30 text-emerald-300 font-semibold">Autonomous AI</span>
             </div>
-            
-            <div class="space-y-4">
-              <div class="p-4 rounded-xl bg-[#0d111c] border border-amber-900/30">
-                <div class="flex justify-between items-center">
-                  <span class="text-amber-400 font-bold text-sm">Claude 3.5 Sonnet</span>
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-950 text-amber-300">Deep Reasoning</span>
-                </div>
-                <p class="text-xs text-slate-400 mt-2">
-                  Multi-turn agent planning, Live Object Model (LOM) path traversal, algorithmic WebAudio DSP code generation, and complex chord substitution theory.
-                </p>
-              </div>
-
-              <div class="p-4 rounded-xl bg-[#0d111c] border border-slate-800">
-                <div class="flex justify-between items-center">
-                  <span class="text-slate-200 font-bold text-sm">Claude 3.5 Haiku</span>
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">High Throughput</span>
-                </div>
-                <p class="text-xs text-slate-400 mt-2">
-                  Sub-second parameter classification, track metadata tagging, UI telemetry validation, and rapid intent triage.
-                </p>
-              </div>
+            <h3 class="text-xl font-bold text-white">AI & Agent Reasoning Architectures</h3>
+            <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+              Autonomous multi-step research loops, dual-profile prompt architectures (<span class="font-mono text-emerald-400">-short</span> vs <span class="font-mono text-emerald-400">-long</span> lossless state handoffs), Model Context Protocol (MCP) bridges, and local-first LLM archive search indexers.
+            </p>
+            <div class="mt-5 space-y-2 text-xs text-slate-300 font-mono">
+              <div class="flex items-center gap-2"><span class="text-emerald-400">▹</span> Gemini Deep Research Agent</div>
+              <div class="flex items-center gap-2"><span class="text-emerald-400">▹</span> AI Session Handoff Protocol</div>
+              <div class="flex items-center gap-2"><span class="text-emerald-400">▹</span> MindTools Cognitive Suite</div>
+              <div class="flex items-center gap-2"><span class="text-emerald-400">▹</span> Grok Archive Viewer (Offline Desktop)</div>
             </div>
           </div>
+          <div class="mt-6 pt-5 border-t border-[#192033] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">MCP • React 19 • Electron</span>
+            <a href="#catalog" onclick="filterCategory('ai')" class="text-emerald-400 hover:text-emerald-300 font-semibold">View 7 Builds →</a>
+          </div>
+        </div>
 
-          <!-- Column 2: Prompt Caching & MCP Bridge -->
-          <div class="flex-1 p-6 rounded-2xl bg-[#131828] border border-[#242d48]">
-            <div class="flex items-center gap-2 mb-4">
-              <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
-              <h3 class="font-bold text-white text-sm font-mono uppercase tracking-wide">Anthropic Protocols</h3>
+        <!-- Pillar 2: Audio DSP & Music Tech -->
+        <div class="p-7 rounded-3xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/25 text-cyan-400 flex items-center justify-center font-bold text-lg">🎵</span>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded bg-cyan-950/40 border border-cyan-600/30 text-cyan-300 font-semibold">Audio & DSP</span>
             </div>
-            
-            <div class="space-y-4">
-              <div class="p-4 rounded-xl bg-[#0d111c] border border-emerald-900/30">
-                <div class="flex justify-between items-center">
-                  <span class="text-emerald-400 font-bold text-sm">Ephemeral Prompt Caching</span>
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300">cache_control</span>
-                </div>
-                <p class="text-xs text-slate-400 mt-2">
-                  Caches 200k-token DAW manuals, synthesizer parameter maps, and Lakh MIDI harmonic corpora. Cuts turnaround latency from 8s to &lt;1.2s.
-                </p>
-              </div>
-
-              <div class="p-4 rounded-xl bg-[#0d111c] border border-emerald-900/30">
-                <div class="flex justify-between items-center">
-                  <span class="text-emerald-400 font-bold text-sm">Model Context Protocol (MCP)</span>
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300">Standard I/O</span>
-                </div>
-                <p class="text-xs text-slate-400 mt-2">
-                  Native stdio/WebSocket MCP servers that expose real-time DAW clip creation, device insertion, and XML preset decompilation directly into Claude.
-                </p>
-              </div>
+            <h3 class="text-xl font-bold text-white">Audio DSP & Music Technology</h3>
+            <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+              Studio-grade WebAudio DSP algorithms running 100% client-side, embedded Max for Live neural network mixers, native desktop companions for Ableton Live 12, algorithmic music theory reharmonizers, and binary XML preset forensics.
+            </p>
+            <div class="mt-5 space-y-2 text-xs text-slate-300 font-mono">
+              <div class="flex items-center gap-2"><span class="text-cyan-400">▹</span> Producer Tools DSP Suite (60+ algorithms)</div>
+              <div class="flex items-center gap-2"><span class="text-cyan-400">▹</span> Live Actions & Producer Pal (MCP DAW)</div>
+              <div class="flex items-center gap-2"><span class="text-cyan-400">▹</span> Ableton Live Skin Builder (147 palettes)</div>
+              <div class="flex items-center gap-2"><span class="text-cyan-400">▹</span> Dub Assistant Neural Mixer (M4L MLP)</div>
             </div>
           </div>
+          <div class="mt-6 pt-5 border-t border-[#192033] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">WebAudio • Praat-WASM • Max</span>
+            <a href="#catalog" onclick="filterCategory('audio')" class="text-cyan-400 hover:text-cyan-300 font-semibold">View 8 Builds →</a>
+          </div>
+        </div>
 
-          <!-- Column 3: Edge Execution -->
-          <div class="flex-1 p-6 rounded-2xl bg-[#131828] border border-[#242d48]">
-            <div class="flex items-center gap-2 mb-4">
-              <span class="w-3 h-3 rounded-full bg-cyan-500"></span>
-              <h3 class="font-bold text-white text-sm font-mono uppercase tracking-wide">Local-First Creative Edge</h3>
+        <!-- Pillar 3: Voice AI & Speech Science -->
+        <div class="p-7 rounded-3xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/25 text-purple-400 flex items-center justify-center font-bold text-lg">🎙️</span>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded bg-purple-950/40 border border-purple-600/30 text-purple-300 font-semibold">Voice Science</span>
             </div>
-            
-            <div class="space-y-4">
-              <div class="p-4 rounded-xl bg-[#0d111c] border border-cyan-900/30">
-                <div class="text-cyan-400 font-bold text-sm">Ableton Live 12 Desktop</div>
-                <p class="text-xs text-slate-400 mt-2">
-                  Direct OSC / MIDI / UDP socket control inside local studio sessions without cloud hops or streaming audio latency.
-                </p>
-              </div>
-
-              <div class="p-4 rounded-xl bg-[#0d111c] border border-cyan-900/30">
-                <div class="text-cyan-400 font-bold text-sm">Client-Side WASM & WebAudio</div>
-                <p class="text-xs text-slate-400 mt-2">
-                  Pure client-side audio rendering, Praat-WASM formant phonetics, and zero-dependency XML preset surgery.
-                </p>
-              </div>
+            <h3 class="text-xl font-bold text-white">Voice AI & Phonetic Engineering</h3>
+            <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+              Broad phonemic IPA pronunciation dictionary compilers capturing authentic human idiolect (Wells 24 Lexical Sets), neural speech source isolation (RoFormer / Demucs), and 10-dimension forensic acoustic biometric profiling.
+            </p>
+            <div class="mt-5 space-y-2 text-xs text-slate-300 font-mono">
+              <div class="flex items-center gap-2"><span class="text-purple-400">▹</span> Cartesia Voice Toolkit & Pipeline</div>
+              <div class="flex items-center gap-2"><span class="text-purple-400">▹</span> Voice Biometric Profiling Engine</div>
+              <div class="flex items-center gap-2"><span class="text-purple-400">▹</span> Computational Idiolect & IPA Compilers</div>
+              <div class="flex items-center gap-2"><span class="text-purple-400">▹</span> Formant Dispersion & HNR Analyzers</div>
             </div>
           </div>
+          <div class="mt-6 pt-5 border-t border-[#192033] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">Python 3 • IPA • Cartesia Sonic-2</span>
+            <a href="#catalog" onclick="filterCategory('voice')" class="text-purple-400 hover:text-purple-300 font-semibold">View Builds →</a>
+          </div>
+        </div>
 
+        <!-- Pillar 4: Procedural Vector Math & UI -->
+        <div class="p-7 rounded-3xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/25 text-amber-400 flex items-center justify-center font-bold text-lg">📐</span>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded bg-amber-950/40 border border-amber-600/30 text-amber-300 font-semibold">Vector & UI</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">Procedural Vectors & Generative UI</h3>
+            <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+              Mathematical aerospace HUD generators, radar reticles, hardware rack faceplates, universal design token engines (179 aesthetic design systems), hardware-accelerated Canvas vector animations, and algorithmic icon compilers.
+            </p>
+            <div class="mt-5 space-y-2 text-xs text-slate-300 font-mono">
+              <div class="flex items-center gap-2"><span class="text-amber-400">▹</span> Procedural HUD Designer (Avionics)</div>
+              <div class="flex items-center gap-2"><span class="text-amber-400">▹</span> Design Templates Engine (179 systems)</div>
+              <div class="flex items-center gap-2"><span class="text-amber-400">▹</span> Canvas SVG Animator Engine</div>
+              <div class="flex items-center gap-2"><span class="text-amber-400">▹</span> Vector Icon Pack Builder & SVG Sprites</div>
+            </div>
+          </div>
+          <div class="mt-6 pt-5 border-t border-[#192033] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">Pure SVG • HTML5 Canvas • Tokens</span>
+            <a href="#catalog" onclick="filterCategory('vector')" class="text-amber-400 hover:text-amber-300 font-semibold">View 6 Builds →</a>
+          </div>
+        </div>
+
+        <!-- Pillar 5: Systems Forensics & Data Pipelines -->
+        <div class="p-7 rounded-3xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/25 text-indigo-400 flex items-center justify-center font-bold text-lg">⚙️</span>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded bg-indigo-950/40 border border-indigo-600/30 text-indigo-300 font-semibold">Systems & Data</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">Systems Diagnostics & Data Pipelines</h3>
+            <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+              Native desktop diagnostics decoding Windows BSOD BugCheck codes into plain English, high-throughput technical documentation ingestion into SQLite FTS5 and Apache Parquet, video tutorial extraction, and custom browser extensions.
+            </p>
+            <div class="mt-5 space-y-2 text-xs text-slate-300 font-mono">
+              <div class="flex items-center gap-2"><span class="text-indigo-400">▹</span> Windows System Log Translator</div>
+              <div class="flex items-center gap-2"><span class="text-indigo-400">▹</span> Docs Database Parser (SQLite FTS5 / Parquet)</div>
+              <div class="flex items-center gap-2"><span class="text-indigo-400">▹</span> YouTube Tutorial Capture Engine</div>
+              <div class="flex items-center gap-2"><span class="text-indigo-400">▹</span> Web Documentation Crawler & Web-to-PDF</div>
+            </div>
+          </div>
+          <div class="mt-6 pt-5 border-t border-[#192033] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">Python 3 • WMI • SQLite • Parquet</span>
+            <a href="#catalog" onclick="filterCategory('systems')" class="text-indigo-400 hover:text-indigo-300 font-semibold">View 5 Builds →</a>
+          </div>
+        </div>
+
+        <!-- Cross-Discipline Synergy Card -->
+        <div class="p-7 rounded-3xl bg-gradient-to-br from-[#121626] to-[#0e111d] border border-amber-600/30 flex flex-col justify-between shadow-xl">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 flex items-center justify-center font-bold text-lg">⚡</span>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded bg-amber-950/60 border border-amber-500/40 text-amber-300 font-semibold">Cross-Discipline</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">Local-First Integrated Studio</h3>
+            <p class="text-sm text-slate-300 mt-3 leading-relaxed">
+              These systems do not live in isolation. Autonomous AI agents drive DAW hardware, procedural vector engines render telemetry for DSP suites, and speech science pipelines feed acoustic biometrics into real-time synthesis.
+            </p>
+            <div class="mt-5 p-4 rounded-xl bg-[#090b14] border border-[#1b2238] text-xs text-slate-300">
+              <span class="text-amber-400 font-bold block mb-1">Architectural Standard:</span>
+              Strict token budgets, zero cloud latency hops, deterministic mathematical pipelines, and copyleft open-source integrity.
+            </div>
+          </div>
+          <div class="mt-6 pt-5 border-t border-[#1f2842] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-400">GPL-3.0 Copyleft</span>
+            <a href="#philosophy" class="text-amber-400 hover:text-amber-300 font-semibold">Read Philosophy →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Featured Flagship Builds -->
+  <section id="featured" class="py-24 px-6 border-t border-[#161a29] bg-[#07080c] relative z-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-3xl">
+        <div class="text-xs font-mono uppercase tracking-widest text-amber-500 font-semibold mb-2">Deep Architectural Dives</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Featured Systems & Applications
+        </h2>
+        <p class="mt-4 text-slate-400 text-base leading-relaxed">
+          Highlighting landmark systems engineered from scratch across autonomous agents, signal processing, vector mathematics, and systems diagnostics.
+        </p>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Featured 1: Gemini Deep Research Agent -->
+        <div class="p-8 rounded-3xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start">
+              <span class="px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono text-xs font-semibold">Autonomous AI Agent</span>
+              <span class="text-slate-500 text-xs font-mono">React 19 • Vite • Gemini API</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mt-4">Gemini Deep Research Agent</h3>
+            <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+              An autonomous multi-stage analyst agent that dynamically decomposes ambiguous inquiries into structured search queries, executes iterative web exploration, evaluates source authority, and compiles comprehensive, cited research dossiers in clean Markdown.
+            </p>
+            <div class="mt-5 space-y-1.5 text-xs text-slate-300">
+              <div class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Multi-turn iterative search and source cross-examination</div>
+              <div class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Source credibility assessment and bias minimization</div>
+              <div class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Structured dossier export with inline citations</div>
+            </div>
+          </div>
+          <div class="mt-6 pt-6 border-t border-[#161c2e] flex items-center justify-between">
+            <span class="text-xs font-mono text-slate-500">Autonomous Analyst Loop</span>
+            <a href="https://github.com/mkomorny/gemini-deep-research-agent" target="_blank" rel="noopener noreferrer" 
+               class="text-xs text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1 font-mono">
+              <span>View Code</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Featured 2: Live Actions & Producer Pal -->
+        <div class="p-8 rounded-3xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start">
+              <span class="px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-mono text-xs font-semibold">DAW AI Co-Producer</span>
+              <span class="text-slate-500 text-xs font-mono">Electron • TypeScript • Ableton LOM</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mt-4">Live Actions & Producer Pal</h3>
+            <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+              Native desktop companion for Ableton Live 12 featuring one-click studio utilities and an autonomous AI co-producer. Connects Claude and local LLMs via Model Context Protocol (MCP) directly to the Live Object Model for automated clip building, device insertion, and intelligent mixing.
+            </p>
+            <div class="mt-5 space-y-1.5 text-xs text-slate-300">
+              <div class="flex items-center gap-2"><span class="text-cyan-400">✓</span> Bidirectional MCP server for Live Object Model</div>
+              <div class="flex items-center gap-2"><span class="text-cyan-400">✓</span> 200k context prompt caching for track arrangement</div>
+              <div class="flex items-center gap-2"><span class="text-cyan-400">✓</span> Local desktop execution with zero cloud audio hops</div>
+            </div>
+          </div>
+          <div class="mt-6 pt-6 border-t border-[#161c2e] flex items-center justify-between">
+            <span class="text-xs font-mono text-slate-500">Live 12 • Grok CLI • Claude</span>
+            <a href="https://github.com/mkomorny/live-actions" target="_blank" rel="noopener noreferrer" 
+               class="text-xs text-cyan-400 hover:text-cyan-300 font-semibold flex items-center gap-1 font-mono">
+              <span>View Code</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Featured 3: MindTools Suite -->
+        <div class="p-8 rounded-3xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start">
+              <span class="px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono text-xs font-semibold">Cognitive Architecture</span>
+              <span class="text-slate-500 text-xs font-mono">React 19 • TypeScript • Tailwind</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mt-4">MindTools Cognitive Suite</h3>
+            <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+              A full-stack cognitive assistance and structured thinking studio featuring 15+ specialized reasoning engines: first-principles decomposition, cognitive bias auditing, multi-criteria trade-off matrix evaluation, and LLM prompt optimization workbench.
+            </p>
+            <div class="mt-5 space-y-1.5 text-xs text-slate-300">
+              <div class="flex items-center gap-2"><span class="text-emerald-400">✓</span> 15+ interactive cognitive reasoning frameworks</div>
+              <div class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Bias detection and decision quality scoring</div>
+              <div class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Zero external telemetry; pure client-side state</div>
+            </div>
+          </div>
+          <div class="mt-6 pt-6 border-t border-[#161c2e] flex items-center justify-between">
+            <span class="text-xs font-mono text-slate-500">Reasoning Studio</span>
+            <a href="https://github.com/mkomorny/mindtools-suite" target="_blank" rel="noopener noreferrer" 
+               class="text-xs text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1 font-mono">
+              <span>View Code</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Featured 4: Procedural HUD Designer -->
+        <div class="p-8 rounded-3xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start">
+              <span class="px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-400 font-mono text-xs font-semibold">Procedural Mathematics</span>
+              <span class="text-slate-500 text-xs font-mono">Python 3 • Pure SVG Geometries</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mt-4">Procedural HUD Designer</h3>
+            <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+              A pure Python procedural vector generation engine that mathematically calculates and renders aerospace Head-Up Displays (HUDs), military radar reticles, compass roses, and 19-inch audio rack hardware faceplates with millimeter-accurate SVG coordinates.
+            </p>
+            <div class="mt-5 space-y-1.5 text-xs text-slate-300">
+              <div class="flex items-center gap-2"><span class="text-amber-400">✓</span> Trigonometric coordinate mapping and vector reticles</div>
+              <div class="flex items-center gap-2"><span class="text-amber-400">✓</span> Zero third-party dependencies; pure mathematical SVG</div>
+              <div class="flex items-center gap-2"><span class="text-amber-400">✓</span> Scalable from smartwatch screens to 4K avionics</div>
+            </div>
+          </div>
+          <div class="mt-6 pt-6 border-t border-[#161c2e] flex items-center justify-between">
+            <span class="text-xs font-mono text-slate-500">Vector Geometry Engine</span>
+            <a href="https://github.com/mkomorny/procedural-hud-designer" target="_blank" rel="noopener noreferrer" 
+               class="text-xs text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-1 font-mono">
+              <span>View Code</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Featured 5: Cartesia Voice Toolkit & Biometrics -->
+        <div class="p-8 rounded-3xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start">
+              <span class="px-3 py-1 rounded-md bg-purple-500/10 border border-purple-500/20 text-purple-400 font-mono text-xs font-semibold">Speech Science & AI</span>
+              <span class="text-slate-500 text-xs font-mono">Python 3 • IPA • RoFormer • Cartesia</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mt-4">Cartesia Voice Toolkit</h3>
+            <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+              An automated voice pipeline that searches online for speech clips, isolates pure vocals using neural source separation (Mel-Band RoFormer / Demucs), compiles broad phonemic IPA pronunciation dictionaries based on the Wells 24 Lexical Sets, and renders synchronized 1080p split-screen animated dialogue videos.
+            </p>
+            <div class="mt-5 space-y-1.5 text-xs text-slate-300">
+              <div class="flex items-center gap-2"><span class="text-purple-400">✓</span> Automated speech clip harvesting & neural vocal isolation</div>
+              <div class="flex items-center gap-2"><span class="text-purple-400">✓</span> Wells 24 lexical set phonetic dictionary compiler</div>
+              <div class="flex items-center gap-2"><span class="text-purple-400">✓</span> 10-dimension forensic voice biometric profiling schema</div>
+            </div>
+          </div>
+          <div class="mt-6 pt-6 border-t border-[#161c2e] flex items-center justify-between">
+            <span class="text-xs font-mono text-slate-500">Phonetics & TTS Engine</span>
+            <a href="https://github.com/mkomorny/cartesia-voice-toolkit" target="_blank" rel="noopener noreferrer" 
+               class="text-xs text-purple-400 hover:text-purple-300 font-semibold flex items-center gap-1 font-mono">
+              <span>View Code</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Featured 6: Windows System Log Translator -->
+        <div class="p-8 rounded-3xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start">
+              <span class="px-3 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 font-mono text-xs font-semibold">Systems Diagnostics</span>
+              <span class="text-slate-500 text-xs font-mono">Python 3 • pywebview • WMI</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mt-4">Windows System Log Translator</h3>
+            <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+              A native desktop diagnostic tool that queries the Windows Event Viewer and Event Log subsystem, decodes cryptic hexadecimal BugCheck BSOD codes, and translates obscure driver, memory, and kernel exceptions into actionable, plain-English troubleshooting workflows.
+            </p>
+            <div class="mt-5 space-y-1.5 text-xs text-slate-300">
+              <div class="flex items-center gap-2"><span class="text-indigo-400">✓</span> Real-time WMI and Event Viewer log decoding</div>
+              <div class="flex items-center gap-2"><span class="text-indigo-400">✓</span> BugCheck parameter translation & driver culprit identification</div>
+              <div class="flex items-center gap-2"><span class="text-indigo-400">✓</span> 100% offline desktop application with zero cloud tracking</div>
+            </div>
+          </div>
+          <div class="mt-6 pt-6 border-t border-[#161c2e] flex items-center justify-between">
+            <span class="text-xs font-mono text-slate-500">Kernel & BSOD Forensics</span>
+            <a href="https://github.com/mkomorny/windows-system-log-translator" target="_blank" rel="noopener noreferrer" 
+               class="text-xs text-indigo-400 hover:text-indigo-300 font-semibold flex items-center gap-1 font-mono">
+              <span>View Code</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Interactive Full Build Catalog -->
+  <section id="catalog" class="py-24 px-6 border-t border-[#161a29] bg-[#090b12] relative z-10">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div class="max-w-2xl">
+          <div class="text-xs font-mono uppercase tracking-widest text-amber-500 font-semibold mb-2">Verified Software Portfolio</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Complete Build & Repository Catalog
+          </h2>
+          <p class="mt-3 text-slate-400 text-sm leading-relaxed">
+            Search, filter, and explore all 28+ open-source architectural frameworks, desktop applications, DSP suites, and systems engines.
+          </p>
+        </div>
+        
+        <!-- Live Result Counter -->
+        <div class="text-xs font-mono text-slate-400 bg-[#0d101a] border border-[#1b2238] px-4 py-2 rounded-xl flex items-center gap-2 self-start md:self-auto">
+          <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+          <span>Showing <span id="visible-count" class="text-amber-400 font-bold">28</span> of <span id="total-count" class="text-white font-bold">28</span> builds</span>
         </div>
       </div>
 
-      <!-- Feature Deep Dive Cards -->
-      <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl bg-[#0e121e] border border-[#1e253c] card-hover">
-          <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg mb-4">
-            ⚡
+      <!-- Search & Category Filters -->
+      <div class="mt-10 p-4 rounded-2xl bg-[#0d101a] border border-[#1b2238] flex flex-col lg:flex-row gap-4 items-stretch lg:items-center justify-between shadow-xl">
+        
+        <!-- Search Input -->
+        <div class="relative flex-1">
+          <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           </div>
-          <h3 class="text-lg font-bold text-white">Large-Context Arrangement Ingestion</h3>
-          <p class="text-sm text-slate-400 mt-2 leading-relaxed">
-            Music production sessions generate massive structural state: hundreds of clips, automation envelopes, and device chains. Claude’s 200k context window ingests entire sessions to make coherent, track-wide arrangement decisions.
+          <input type="text" id="build-search" placeholder="Search by name, technology (e.g. Python, WASM, React), or keyword..." 
+                 class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#090b14] border border-[#232b47] text-white placeholder-slate-500 text-xs font-mono focus:outline-none focus:border-amber-500/70 transition-all">
+        </div>
+
+        <!-- Category Pills -->
+        <div class="flex flex-wrap gap-2 items-center" id="filter-pills">
+          <button onclick="filterCategory('all')" data-cat="all" class="filter-btn active px-3.5 py-1.5 rounded-lg bg-[#090b14] hover:bg-[#151928] border border-[#232b47] text-slate-300 text-xs font-mono font-medium transition-all">
+            All (28)
+          </button>
+          <button onclick="filterCategory('ai')" data-cat="ai" class="filter-btn px-3.5 py-1.5 rounded-lg bg-[#090b14] hover:bg-[#151928] border border-[#232b47] text-slate-300 text-xs font-mono font-medium transition-all flex items-center gap-1.5">
+            <span>🤖 AI & Agents</span>
+          </button>
+          <button onclick="filterCategory('audio')" data-cat="audio" class="filter-btn px-3.5 py-1.5 rounded-lg bg-[#090b14] hover:bg-[#151928] border border-[#232b47] text-slate-300 text-xs font-mono font-medium transition-all flex items-center gap-1.5">
+            <span>🎵 Audio & DSP</span>
+          </button>
+          <button onclick="filterCategory('voice')" data-cat="voice" class="filter-btn px-3.5 py-1.5 rounded-lg bg-[#090b14] hover:bg-[#151928] border border-[#232b47] text-slate-300 text-xs font-mono font-medium transition-all flex items-center gap-1.5">
+            <span>🎙️ Voice Science</span>
+          </button>
+          <button onclick="filterCategory('vector')" data-cat="vector" class="filter-btn px-3.5 py-1.5 rounded-lg bg-[#090b14] hover:bg-[#151928] border border-[#232b47] text-slate-300 text-xs font-mono font-medium transition-all flex items-center gap-1.5">
+            <span>📐 Vector & UI</span>
+          </button>
+          <button onclick="filterCategory('systems')" data-cat="systems" class="filter-btn px-3.5 py-1.5 rounded-lg bg-[#090b14] hover:bg-[#151928] border border-[#232b47] text-slate-300 text-xs font-mono font-medium transition-all flex items-center gap-1.5">
+            <span>⚙️ Systems & Data</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Build Cards Grid -->
+      <div id="builds-grid" class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- 1. Gemini Deep Research Agent -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="ai" 
+             data-search="gemini deep research agent react 19 vite typescript autonomous multi-stage analyst web exploration citations dossier">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950/40 border border-emerald-600/30 text-emerald-300 font-bold uppercase">AI & Agents</span>
+              <span class="text-[10px] font-mono text-slate-500">React 19 • Vite • Gemini API</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">gemini-deep-research-agent</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Autonomous multi-stage analyst agent that plans queries, explores the web iteratively, evaluates source authority, and synthesizes structured cited research dossiers.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Autonomous Loop</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Cited Reports</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">TypeScript</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">MIT / GPL-3.0</span>
+            <a href="https://github.com/mkomorny/gemini-deep-research-agent" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 2. AI Session Handoff Protocol -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="ai" 
+             data-search="ai session handoff protocol prompt engineering context preservation claude code grok cursor antigravity markdown dual profile">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950/40 border border-emerald-600/30 text-emerald-300 font-bold uppercase">AI & Agents</span>
+              <span class="text-[10px] font-mono text-slate-500">Prompt Architecture</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">ai-session-handoff-protocol</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Industry-first dual-profile prompt architecture (-short vs -long lossless) preventing context degradation and hallucinated diffs across long multi-turn AI coding sessions.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Context Preservation</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Token Budget</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Open Standard</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">Specification</span>
+            <a href="https://github.com/mkomorny/ai-session-handoff-protocol" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 3. MindTools Suite -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="ai" 
+             data-search="mindtools suite cognitive assistance mental models first principles bias auditing trade-off matrix prompt workbench react 19 typescript vite">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950/40 border border-emerald-600/30 text-emerald-300 font-bold uppercase">AI & Agents</span>
+              <span class="text-[10px] font-mono text-slate-500">React 19 • TypeScript • Vite</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">mindtools-suite</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Full-stack cognitive assistance studio featuring 15+ specialized reasoning engines: first-principles decomposition, cognitive bias auditing, trade-off matrices, and prompt optimization.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">15+ Mental Models</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Client-Side State</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Tailwind CSS</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/mindtools-suite" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 4. Grok Archive Viewer -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="ai" 
+             data-search="grok archive viewer electron vite typescript dompurify offline conversation export full text search privacy">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950/40 border border-emerald-600/30 text-emerald-300 font-bold uppercase">AI & Agents</span>
+              <span class="text-[10px] font-mono text-slate-500">Electron • Vite • TypeScript</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">grok-archive-viewer</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Privacy-first, 100% offline desktop viewer and full-text search index for massive local Grok conversation JSON export archives with zero cloud transmission.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Offline Desktop</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">JSON Archive Index</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">DOMPurify</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/grok-archive-viewer" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 5. AI Chat Session Exporter -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="ai" 
+             data-search="ai chat session exporter python cli markdown html json csv transcript formatting parser pair programming">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950/40 border border-emerald-600/30 text-emerald-300 font-bold uppercase">AI & Agents</span>
+              <span class="text-[10px] font-mono text-slate-500">Python 3 (Standard Library)</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">ai-chat-session-exporter</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Universal CLI utility that parses raw AI pair-programming conversation transcripts into clean, sanitized Markdown, HTML, JSON, and CSV export packages.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Zero Dependencies</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Multi-Format CLI</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Transcript Sanitizer</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/ai-chat-session-exporter" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 6. Prompt Generator Luxe -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="ai" 
+             data-search="prompt generator luxe electron react vite exifr multimodal prompt synthesis studio prompt engineering style extraction">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950/40 border border-emerald-600/30 text-emerald-300 font-bold uppercase">AI & Agents</span>
+              <span class="text-[10px] font-mono text-slate-500">Electron • React • Vite</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">prompt-generator-luxe</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Multimodal prompt synthesis studio and prompt engineering workbench with artistic style parameter extraction, camera tuning, and metadata inspection.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Style Extraction</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Exif Metadata</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Desktop UI</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/prompt-generator-luxe" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 7. MCP Configurator -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="ai" 
+             data-search="mcp configurator model context protocol server json schema validator claude desktop config tools">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950/40 border border-emerald-600/30 text-emerald-300 font-bold uppercase">AI & Agents</span>
+              <span class="text-[10px] font-mono text-slate-500">TypeScript • JSON Schema</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">mcp-configurator</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Desktop configurator and schema validator for Model Context Protocol (MCP) server definitions, tool parameter declarations, and client configurations.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Model Context Protocol</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Tool Schema</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Validation</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/mcp-configurator" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 8. Producer Tools DSP Suite -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="audio" 
+             data-search="producer tools dsp suite webaudio react 19 typescript praat wasm tone js 60 algorithmic audio transforms piano roll vocal formant">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950/40 border border-cyan-600/30 text-cyan-300 font-bold uppercase">Audio & DSP</span>
+              <span class="text-[10px] font-mono text-slate-500">React 19 • Praat-WASM • Tone.js</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">producer-tools-dsp-suite</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              60+ hand-crafted algorithmic digital signal processing transformations in WebAudio: Multi-Band DRC, Sinc Resamplers, Reverbs, and real-time WASM vocal formant extraction.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">60+ DSP Modules</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Praat-WASM</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Zero Cloud Audio</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/producer-tools-dsp-suite" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 9. Live Actions & Producer Pal -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="audio" 
+             data-search="live actions producer pal electron typescript ableton live 12 lom model context protocol mcp ai co-producer daw automation">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950/40 border border-cyan-600/30 text-cyan-300 font-bold uppercase">Audio & DSP</span>
+              <span class="text-[10px] font-mono text-slate-500">Electron • Ableton LOM • MCP</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">live-actions</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Desktop studio companion for Ableton Live 12 featuring one-click utilities and an AI co-producer connecting Claude directly into the Live Object Model via MCP.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Ableton Live 12</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">MCP DAW Bridge</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">LOM Control</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/live-actions" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 10. Ableton Live Skin Builder -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="audio" 
+             data-search="live skin builder ableton live 12 theme designer ask xml compiler 147 palettes vector mockup daw themes">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950/40 border border-cyan-600/30 text-cyan-300 font-bold uppercase">Audio & DSP</span>
+              <span class="text-[10px] font-mono text-slate-500">Vanilla JS • HTML5 • CSS3 • SVG</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">live-skin-builder</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              In-browser DAW theme designer: 1280x800 interactive vector mockup of Ableton Live 12 across 3 views, 147 curated color palettes, and .ask XML compiler.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">147 Palettes</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Vector DAW Mockup</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">.ask XML Engine</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/live-skin-builder" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 11. Dub Assistant Neural Mixer -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="audio" 
+             data-search="dub assistant neural mixer max for live javascript mlp multilayer perceptron backpropagation ableton live delay reverb send parameters">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950/40 border border-cyan-600/30 text-cyan-300 font-bold uppercase">Audio & DSP</span>
+              <span class="text-[10px] font-mono text-slate-500">JavaScript • Max for Live</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">dub-assistant-neural-mixer</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Real-time neural network mixer in Max for Live: embedded JavaScript Multilayer Perceptron (MLP) dynamically mapping 3 macro knobs across 24 concurrent delay/reverb sends.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Embedded MLP</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">24 Send Matrix</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Online Learning</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/dub-assistant-neural-mixer" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 12. Algorithmic Reharmonizer -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="audio" 
+             data-search="algorithmic reharmonizer python music theory neo-soul gospel extensions tritone substitutions modal interchange harmony">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950/40 border border-cyan-600/30 text-cyan-300 font-bold uppercase">Audio & DSP</span>
+              <span class="text-[10px] font-mono text-slate-500">Python 3 (Standard Library)</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">algorithmic-reharmonizer</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Algorithmic music theory engine transforming standard chord progressions into Neo-Soul/Gospel extensions, tritone substitutions (subV7), and modal interchange.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Music Theory</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Jazz Harmony</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Zero Dependencies</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/algorithmic-reharmonizer" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 13. MIDI Chord Progression Builder -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="audio" 
+             data-search="midi chord progression builder python mido humanized midi drop-2 open ambient pad voicings velocity curves">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950/40 border border-cyan-600/30 text-cyan-300 font-bold uppercase">Audio & DSP</span>
+              <span class="text-[10px] font-mono text-slate-500">Python 3 • mido</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">midi-chord-progression-builder</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Programmatic humanized Standard MIDI File (.mid) generator featuring Drop-2, open, and ambient pad voicings with authentic pianistic velocity curves.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Standard MIDI (.mid)</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Drop-2 Voicings</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Humanization</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/midi-chord-progression-builder" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 14. Ableton Preset Sample Relinker -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="audio" 
+             data-search="ableton preset sample relinker python xml gzipped adg adv sampleref audio sample relinking">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950/40 border border-cyan-600/30 text-cyan-300 font-bold uppercase">Audio & DSP</span>
+              <span class="text-[10px] font-mono text-slate-500">Python 3 (Standard Library)</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">ableton-preset-sample-relinker</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Zero-dependency systems utility decompressing and parsing gzipped XML preset archives (.adg/.adv) to relink broken sample dependencies without duplicate files.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Gzipped XML Surgery</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Preset Forensics</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Zero Audio Bloat</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/ableton-preset-sample-relinker" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 15. Synth Operator -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="audio" 
+             data-search="synth operator nextjs 16 react 19 electron synthesizer parameter workbench sound design patch manager">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950/40 border border-cyan-600/30 text-cyan-300 font-bold uppercase">Audio & DSP</span>
+              <span class="text-[10px] font-mono text-slate-500">Next.js 16 • React 19 • Electron</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">synth-operator</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Sound design parameter schema engine and comprehensive patch workbench for hardware and software synthesizers across diverse synthesis architectures.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Patch Schema</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Hardware & VST</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Desktop Studio</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/synth-operator" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 16. FFmpeg Audio Sample Engine -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="audio" 
+             data-search="ffmpeg audio sample engine python ffmpeg lufs normalization silence trimming time stretch spectral filtering batch audio dsp">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950/40 border border-cyan-600/30 text-cyan-300 font-bold uppercase">Audio & DSP</span>
+              <span class="text-[10px] font-mono text-slate-500">Python 3 • FFmpeg</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">ffmpeg-audio-sample-engine</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Decoupled batch audio DSP engine exposing 17 operations: LUFS loudness normalization, silence trimming, time-stretching, and spectral filtering.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">17 Audio Ops</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">LUFS Normalization</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Batch Processing</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/ffmpeg-audio-sample-engine" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 17. Cartesia Voice Toolkit -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="voice" 
+             data-search="cartesia voice toolkit python cartesia sonic 2 roformer demucs ipa wells 24 speech isolation split screen video dialogue synthesis">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-950/40 border border-purple-600/30 text-purple-300 font-bold uppercase">Voice Science</span>
+              <span class="text-[10px] font-mono text-slate-500">Python 3 • Cartesia • RoFormer</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">cartesia-voice-toolkit</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              End-to-end voice AI suite with speech clip harvesting, neural vocal separation, broad IPA dictionary compiling, and synchronized 1080p split-screen animated video rendering.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Neural Stem Separation</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Wells 24 Sets</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">1080p Render</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/cartesia-voice-toolkit" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 18. Voice Biometric Profiling Engine -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="voice" 
+             data-search="voice biometric profiling engine speech science forensic acoustic formant bandwidths biomechanics tts calibration markdown schema">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-950/40 border border-purple-600/30 text-purple-300 font-bold uppercase">Voice Science</span>
+              <span class="text-[10px] font-mono text-slate-500">Speech Science Schema</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">voice-biometric-profiling-engine</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Standardized 10-dimension forensic acoustic specification analyzing time-domain waveforms, spectral tilt, formant bandwidths (B1–B4), and vocal tract biomechanics.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">10D Acoustic Schema</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Formant Profiling</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">TTS Calibration</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">Specification</span>
+            <a href="https://github.com/mkomorny/voice-biometric-profiling-engine" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 19. Design Templates Engine -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="vector" 
+             data-search="design templates engine css tokens design system specs 179 aesthetic design systems nordic monolith oled cyberdeck bauhaus braun avionics hud">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-950/40 border border-amber-600/30 text-amber-300 font-bold uppercase">Vector & UI</span>
+              <span class="text-[10px] font-mono text-slate-500">CSS Tokens • Design Specs</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">design-templates-engine</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Universal design token engine containing 179 production-grade aesthetic design systems (Nordic Monolith, OLED Cyberdeck, Swiss Bauhaus, Braun Functionalist, Avionics HUD).
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">179 Design Systems</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Design Tokens</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">CSS Specifications</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">Design System</span>
+            <a href="https://github.com/mkomorny/design-templates-engine" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 20. Procedural HUD Designer -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="vector" 
+             data-search="procedural hud designer python pure svg generator aerospace reticles military radar rack faceplates vector math">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-950/40 border border-amber-600/30 text-amber-300 font-bold uppercase">Vector & UI</span>
+              <span class="text-[10px] font-mono text-slate-500">Python 3 (Pure SVG Generator)</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">procedural-hud-designer</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Pure Python procedural vector graphics engine that mathematically calculates and renders aerospace HUDs, radar reticles, and 19-inch audio rack hardware faceplates.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Pure SVG Math</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Aerospace HUD</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Zero Dependencies</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/procedural-hud-designer" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 21. Canvas SVG Animator Engine -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="vector" 
+             data-search="canvas svg animator engine python html5 canvas css filters laser trace neon breathing oscilloscope waveforms vector animation">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-950/40 border border-amber-600/30 text-amber-300 font-bold uppercase">Vector & UI</span>
+              <span class="text-[10px] font-mono text-slate-500">HTML5 Canvas • CSS Filters</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">canvas-svg-animator-engine</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Hardware-accelerated vector animator converting static SVG paths into glowing laser-trace drawing animations, neon breathing pulses, and oscilloscope waveforms.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Canvas Acceleration</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Laser Glow Tracing</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Oscilloscope UI</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/canvas-svg-animator-engine" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 22. Vector Icon Pack Builder -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="vector" 
+             data-search="vector icon pack builder python svg coordinate math algorithmic vector normalizer stroke weights corner radii line caps">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-950/40 border border-amber-600/30 text-amber-300 font-bold uppercase">Vector & UI</span>
+              <span class="text-[10px] font-mono text-slate-500">Python 3 • SVG Math</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">vector-icon-pack-builder</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Algorithmic vector compiler that parses arbitrary SVG geometries and normalizes stroke weights, corner radii, and line caps to match design token geometries.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Stroke Normalization</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Vector Compiler</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Token Matching</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/vector-icon-pack-builder" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 23. SVG Sprite Compiler -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="vector" 
+             data-search="svg sprite compiler python zero dependencies symbol sprite sheets interactive html gallery preview build utility">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-950/40 border border-amber-600/30 text-amber-300 font-bold uppercase">Vector & UI</span>
+              <span class="text-[10px] font-mono text-slate-500">Python 3 (Zero Dependencies)</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">svg-sprite-compiler</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              High-performance SVG build utility that compiles directories of individual SVGs into optimized &lt;symbol&gt; sheets with an interactive preview gallery.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Sprite Sheet Builder</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Interactive Preview</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Zero Dependencies</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/svg-sprite-compiler" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 24. Image Style Analyzer -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="vector" 
+             data-search="image style analyzer electron react vite sharp computer vision lighting composition brushwork camera style extraction">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-950/40 border border-amber-600/30 text-amber-300 font-bold uppercase">Vector & UI</span>
+              <span class="text-[10px] font-mono text-slate-500">Electron • React • Sharp</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">image-style-analyzer</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Multimodal computer vision workbench extracting lighting parameters, palette distributions, compositional geometry, and brushwork aesthetics from images.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Computer Vision</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Palette Analytics</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Sharp Engine</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/image-style-analyzer" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 25. Windows System Log Translator -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="systems" 
+             data-search="windows system log translator python pywebview wmi crash diagnostics bsod bugcheck event viewer plain english driver error">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-950/40 border border-indigo-600/30 text-indigo-300 font-bold uppercase">Systems & Data</span>
+              <span class="text-[10px] font-mono text-slate-500">Python 3 • pywebview • WMI</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">windows-system-log-translator</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Native desktop diagnostics tool monitoring Windows Event Viewer and decoding hexadecimal BugCheck BSOD codes into actionable, plain-English troubleshooting guides.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Event Viewer WMI</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">BSOD Decoder</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">100% Offline</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/windows-system-log-translator" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 26. Docs Database Parser -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="systems" 
+             data-search="docs database parser python sqlite fts5 pyarrow parquet technical manuals documentation ingestion pipeline search dataset">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-950/40 border border-indigo-600/30 text-indigo-300 font-bold uppercase">Systems & Data</span>
+              <span class="text-[10px] font-mono text-slate-500">Python 3 • SQLite FTS5 • Parquet</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">docs-database-parser</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Automated ingestion pipeline compiling technical guides and manuals into dual-access indexed SQLite FTS5 databases and Apache Parquet columnar storage.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">SQLite FTS5</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Apache Parquet</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">RAG Chunking</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/docs-database-parser" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 27. YouTube Tutorial Capture Engine -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="systems" 
+             data-search="youtube tutorial capture engine python yt-dlp ffmpeg weasyprint video to manual transcript keyframe extraction pdf generator">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-950/40 border border-indigo-600/30 text-indigo-300 font-bold uppercase">Systems & Data</span>
+              <span class="text-[10px] font-mono text-slate-500">Python 3 • yt-dlp • FFmpeg</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">youtube-tutorial-capture-engine</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Automated video-to-manual pipeline extracting transcripts with millisecond timestamps and procedural keyframe screenshots into publication-grade PDF manuals.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Timestamp Extraction</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">FFmpeg Keyframes</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">PDF Generator</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/youtube-tutorial-capture-engine" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+        <!-- 28. Web Documentation Crawler -->
+        <div class="build-card p-6 rounded-2xl bg-[#0d101a] border border-[#1b2238] card-hover flex flex-col justify-between"
+             data-category="systems" 
+             data-search="web documentation crawler python lxml beautifulsoup4 offline pdf reference books documentation scraper crawler robots.txt">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-950/40 border border-indigo-600/30 text-indigo-300 font-bold uppercase">Systems & Data</span>
+              <span class="text-[10px] font-mono text-slate-500">Python 3 • BeautifulSoup • lxml</span>
+            </div>
+            <h4 class="text-lg font-bold text-white">web-documentation-crawler</h4>
+            <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+              Automated crawler respecting robots.txt that recursively traverses multi-page technical documentation trees, strips navigation chrome, and compiles offline reference books.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Recursive Crawler</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Offline Manuals</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#161c2e] text-slate-300">Chrome Stripping</span>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-[#181f33] flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-500">GPL-3.0</span>
+            <a href="https://github.com/mkomorny/web-documentation-crawler" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold">View Repository →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Empty State -->
+      <div id="no-results" class="hidden mt-12 p-12 rounded-3xl bg-[#0d101a] border border-[#1b2238] text-center max-w-md mx-auto">
+        <div class="text-3xl mb-3">🔍</div>
+        <h4 class="text-lg font-bold text-white">No matching builds found</h4>
+        <p class="text-xs text-slate-400 mt-1">Try adjusting your search query or reset category filters.</p>
+        <button onclick="resetFilters()" class="mt-4 px-4 py-2 rounded-lg bg-amber-500/20 text-amber-300 text-xs font-mono font-semibold hover:bg-amber-500/30 transition-all">
+          Reset All Filters
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 4: Engineering Philosophy -->
+  <section id="philosophy" class="py-24 px-6 border-t border-[#161a29] bg-[#07080c] relative z-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-3xl">
+        <div class="text-xs font-mono uppercase tracking-widest text-amber-500 font-semibold mb-2">First Principles</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Architectural Philosophy & Rigor
+        </h2>
+        <p class="mt-4 text-slate-400 text-base leading-relaxed">
+          Every project across DigiDreamWeaver Labs is designed around four non-negotiable engineering commitments.
+        </p>
+      </div>
+
+      <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Pillar 1 -->
+        <div class="p-8 rounded-3xl bg-[#0d101a] border border-[#1b2238] card-hover">
+          <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-xl mb-6">
+            💻
+          </div>
+          <h3 class="text-xl font-bold text-white">1. Local-First & Client-Side Edge Computing</h3>
+          <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+            Modern workstations and browsers possess immense computational capacity. Rather than routing sensitive audio, personal chat archives, and hardware telemetry through remote cloud APIs, our tools execute 100% client-side via WebAudio, WebAssembly (praat-wasm), Electron, and native Python. Zero cloud audio transmission, 0ms latency hops, and total data sovereignty.
           </p>
         </div>
 
-        <div class="p-6 rounded-2xl bg-[#0e121e] border border-[#1e253c] card-hover">
-          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-lg mb-4">
-            🛠️
+        <!-- Pillar 2 -->
+        <div class="p-8 rounded-3xl bg-[#0d101a] border border-[#1b2238] card-hover">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xl mb-6">
+            📐
           </div>
-          <h3 class="text-lg font-bold text-white">Deterministic Structured Tool Use</h3>
-          <p class="text-sm text-slate-400 mt-2 leading-relaxed">
-            DAW audio buffers permit zero margin for error. Claude 3.5 Sonnet's state-of-the-art JSON and tool calling guarantees that parameter modifications, MIDI notes, and device routing execute without syntax hallucination.
+          <h3 class="text-xl font-bold text-white">2. Algorithmic Determinism Over Black Boxes</h3>
+          <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+            While neural networks offer incredible generative capabilities, professional creative and systems engineering requires repeatability, precision, and formal guarantees. Across harmonic voice-leading engines, mathematical aerospace HUDs, and acoustic biometric schemas, we build formal mathematical models with zero margin for syntax hallucination.
           </p>
         </div>
 
-        <div class="p-6 rounded-2xl bg-[#0e121e] border border-[#1e253c] card-hover">
-          <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-lg mb-4">
+        <!-- Pillar 3 -->
+        <div class="p-8 rounded-3xl bg-[#0d101a] border border-[#1b2238] card-hover">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xl mb-6">
             🧠
           </div>
-          <h3 class="text-lg font-bold text-white">Lossless Session Handoff Protocol</h3>
-          <p class="text-sm text-slate-400 mt-2 leading-relaxed">
-            Eliminates context degradation across long multi-turn sessions with our open dual-profile prompt architecture (short ~250–500 tokens vs long lossless), ensuring agents never forget complex architectural decisions.
+          <h3 class="text-xl font-bold text-white">3. Autonomous Agent Economics & Context Preservation</h3>
+          <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+            Uncontrolled agent loops rapidly degrade into hallucinated diffs, forgotten architectural constraints, and ballooning token bills. Our research formulates strict token budgets, lossless session handoff protocols (<span class="font-mono text-emerald-400">-short</span> vs <span class="font-mono text-emerald-400">-long</span> profiles), prompt caching architectures, and native Model Context Protocol (MCP) tool bridges.
           </p>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Section 2: Flagship Product Ecosystem -->
-  <section id="products" class="py-24 px-6 border-t border-[#161a29] bg-[#07080c] relative z-10">
-    <div class="max-w-7xl mx-auto">
-      <div class="max-w-3xl">
-        <div class="text-xs font-mono uppercase tracking-widest text-amber-500 font-semibold mb-2">Demonstrated Momentum</div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Active Production Systems & Prototypes
-        </h2>
-        <p class="mt-4 text-slate-400 text-base leading-relaxed">
-          Not hypothetical slides. DigiDreamWeaver Labs maintains working desktop applications, MCP tool servers, and WebAudio DSP frameworks actively tested in production studio environments.
-        </p>
-      </div>
-
-      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        <!-- Product 1 -->
+        <!-- Pillar 4 -->
         <div class="p-8 rounded-3xl bg-[#0d101a] border border-[#1b2238] card-hover">
-          <div class="flex justify-between items-start">
-            <span class="px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-400 font-mono text-xs font-medium">Desktop DAW Companion</span>
-            <span class="text-slate-500 text-xs font-mono">Electron • TypeScript • Ableton LOM</span>
+          <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-xl mb-6">
+            ⚖️
           </div>
-          <h3 class="text-2xl font-bold text-white mt-4">Live Actions & Producer Pal</h3>
+          <h3 class="text-xl font-bold text-white">4. Reciprocal Copyleft & Independent Software Protection</h3>
           <p class="text-sm text-slate-400 mt-3 leading-relaxed">
-            A native desktop companion for Ableton Live 12 featuring one-click studio utilities and an autonomous AI co-producer. Powered by a custom Model Context Protocol (MCP) server that connects Claude directly to the Live Object Model for automated clip building, device insertion, and intelligent mixing.
+            Original software across this portfolio is licensed under the GNU General Public License v3.0 (GPL-3.0). This copyleft commitment ensures that independent open-source creative technology, phonetic compilers, and systems utilities cannot be strip-mined into proprietary closed-source commercial silos without sharing architectural advancements back to the world.
           </p>
-          <div class="mt-6 pt-6 border-t border-[#161c2e] flex items-center justify-between">
-            <span class="text-xs font-mono text-slate-500">Live 12 • Grok CLI • Claude Desktop</span>
-            <span class="text-xs text-amber-400 font-semibold">Active Private Preview →</span>
-          </div>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="p-8 rounded-3xl bg-[#0d101a] border border-[#1b2238] card-hover">
-          <div class="flex justify-between items-start">
-            <span class="px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-mono text-xs font-medium">WebAudio DSP Studio</span>
-            <span class="text-slate-500 text-xs font-mono">React 19 • TypeScript • Praat-WASM</span>
-          </div>
-          <h3 class="text-2xl font-bold text-white mt-4">Producer Tools DSP Suite</h3>
-          <p class="text-sm text-slate-400 mt-3 leading-relaxed">
-            Over 60 hand-crafted algorithmic digital signal processing transformations executing entirely in the browser: Multi-Band Dynamic Range Compressors, Broadcast DRC, Sinc Resamplers, Algorithmic Reverbs, and real-time WASM vocal formant extraction.
-          </p>
-          <div class="mt-6 pt-6 border-t border-[#161c2e] flex items-center justify-between">
-            <span class="text-xs font-mono text-slate-500">Zero Cloud Audio • 0ms Latency</span>
-            <span class="text-xs text-cyan-400 font-semibold">Production Ready →</span>
-          </div>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="p-8 rounded-3xl bg-[#0d101a] border border-[#1b2238] card-hover">
-          <div class="flex justify-between items-start">
-            <span class="px-3 py-1 rounded-md bg-purple-500/10 border border-purple-500/20 text-purple-400 font-mono text-xs font-medium">Context Architecture</span>
-            <span class="text-slate-500 text-xs font-mono">Standard Specification</span>
-          </div>
-          <h3 class="text-2xl font-bold text-white mt-4">AI Session Handoff Protocol</h3>
-          <p class="text-sm text-slate-400 mt-3 leading-relaxed">
-            The industry-first dual-profile prompt architecture (-short vs -long) engineered to maintain technical context across Claude Code, Grok, Antigravity, and Cursor. Prevents hallucinated code changes and context degradation during long development sprints.
-          </p>
-          <div class="mt-6 pt-6 border-t border-[#161c2e] flex items-center justify-between">
-            <span class="text-xs font-mono text-slate-500">Lossless State Preservation</span>
-            <span class="text-xs text-purple-400 font-semibold">Open Standard →</span>
-          </div>
-        </div>
-
-        <!-- Product 4 -->
-        <div class="p-8 rounded-3xl bg-[#0d101a] border border-[#1b2238] card-hover">
-          <div class="flex justify-between items-start">
-            <span class="px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono text-xs font-medium">Systems Forensics</span>
-            <span class="text-slate-500 text-xs font-mono">Python 3 • Zero Dependencies</span>
-          </div>
-          <h3 class="text-2xl font-bold text-white mt-4">Ableton Preset Sample Relinker</h3>
-          <p class="text-sm text-slate-400 mt-3 leading-relaxed">
-            A zero-dependency systems utility that decompresses and parses gzipped XML Ableton preset archives (.adg/.adv), rebuilding broken sample reference nodes directly without duplicating gigabytes of audio across local hard drives.
-          </p>
-          <div class="mt-6 pt-6 border-t border-[#161c2e] flex items-center justify-between">
-            <span class="text-xs font-mono text-slate-500">Binary XML Stream Surgery</span>
-            <span class="text-xs text-emerald-400 font-semibold">Open Source →</span>
-          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Section 3: Token Economics & Scaling (LTV) -->
-  <section id="economics" class="py-24 px-6 border-t border-[#161a29] bg-[#090b12] relative z-10">
+  <!-- Section 5: Founder Bio -->
+  <section id="founder" class="py-24 px-6 border-t border-[#161a29] bg-[#090b12] relative z-10">
     <div class="max-w-7xl mx-auto">
-      <div class="max-w-3xl">
-        <div class="text-xs font-mono uppercase tracking-widest text-amber-500 font-semibold mb-2">High Lifetime Value & Sustainable Growth</div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Path to Scaled Enterprise API Consumption
-        </h2>
-        <p class="mt-4 text-slate-400 text-base leading-relaxed">
-          Anthropic credit runway will directly fund high-density agentic workflows that naturally scale into recurring, high-volume production API consumption.
-        </p>
-      </div>
-
-      <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-8 sm:p-12 rounded-3xl bg-[#0d101a] border border-[#1b2238] flex flex-col md:flex-row items-center gap-8 shadow-2xl">
         
-        <div class="p-6 rounded-2xl bg-[#0e121e] border border-[#1e253c]">
-          <div class="text-amber-400 font-mono text-2xl font-bold">75k–250k</div>
-          <h3 class="text-base font-bold text-white mt-1">Tokens Per Studio Session</h3>
-          <p class="text-xs text-slate-400 mt-3 leading-relaxed">
-            An average interactive arrangement session executes 15–30 iterative agent cycles, analyzing full track stems, theory schemas, and automation envelopes. High prompt caching reuse ensures token efficiency while maintaining sustained API traffic.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-[#0e121e] border border-[#1e253c]">
-          <div class="text-emerald-400 font-mono text-2xl font-bold">Subscription</div>
-          <h3 class="text-base font-bold text-white mt-1">Direct Commercial Conversion</h3>
-          <p class="text-xs text-slate-400 mt-3 leading-relaxed">
-            Transitioning from free developer tools to a tiered subscription model for music producers, sound designers, and commercial game studios. Customer subscription revenues directly support sustained Anthropic API credit expenditure.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-[#0e121e] border border-[#1e253c]">
-          <div class="text-purple-400 font-mono text-2xl font-bold">Message Batches</div>
-          <h3 class="text-base font-bold text-white mt-1">High-Volume Async Jobs</h3>
-          <p class="text-xs text-slate-400 mt-3 leading-relaxed">
-            Nightly dataset indexing, harmonic progression extraction from MIDI corpora, and documentation ingestion pipelines run millions of tokens through Anthropic's Message Batches API during non-peak hours.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- Specific Support Ask -->
-      <div class="mt-12 p-8 rounded-2xl bg-[#0f1422] border border-amber-900/30">
-        <h3 class="text-lg font-bold text-white flex items-center gap-2">
-          <span class="text-amber-400">Target Support Alignment for Anthropic Startup Program</span>
-        </h3>
-        <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-300">
-          <div class="p-4 rounded-xl bg-[#090c14] border border-[#1a2033]">
-            <strong class="text-amber-300 block mb-1">API Grant Runway</strong>
-            Benchmark multi-agent latency across native desktop wrappers and support beta testing cohorts without token constraints.
-          </div>
-          <div class="p-4 rounded-xl bg-[#090c14] border border-[#1a2033]">
-            <strong class="text-amber-300 block mb-1">Production Tier Headroom</strong>
-            Elevate rate limit tiers to support concurrent parallel tool calls and multi-subagent DAW orchestration loops.
-          </div>
-          <div class="p-4 rounded-xl bg-[#090c14] border border-[#1a2033]">
-            <strong class="text-amber-300 block mb-1">MCP Ecosystem Advisory</strong>
-            Collaborate on advancing Model Context Protocol standards for desktop creative apps and low-latency local streaming.
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Section 4: Founder Bio -->
-  <section id="founder" class="py-24 px-6 border-t border-[#161a29] bg-[#07080c] relative z-10">
-    <div class="max-w-7xl mx-auto">
-      <div class="p-8 sm:p-12 rounded-3xl bg-[#0d101a] border border-[#1b2238] flex flex-col md:flex-row items-center gap-8">
-        
-        <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl bg-gradient-to-tr from-amber-600 to-rose-600 flex items-center justify-center font-bold text-white text-3xl sm:text-4xl shadow-xl shadow-amber-900/20 shrink-0">
+        <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl bg-gradient-to-tr from-amber-500 via-rose-600 to-cyan-600 flex items-center justify-center font-bold text-white text-3xl sm:text-4xl shadow-xl shadow-amber-950/40 shrink-0 font-mono">
           MK
         </div>
 
         <div class="flex-1 text-center md:text-left">
-          <div class="text-xs font-mono uppercase tracking-widest text-amber-500 font-semibold">Founder & Lead Systems Architect</div>
+          <div class="text-xs font-mono uppercase tracking-widest text-amber-500 font-semibold">Founder & Systems Architect</div>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Miranda Komorny</h2>
-          <p class="mt-3 text-slate-400 text-sm leading-relaxed max-w-3xl">
-            Independent software engineer and creative technologist specializing in client-side WebAudio digital signal processing, edge computing, autonomous agent reasoning, and procedural vector mathematics. Founder and sole architect behind DigiDreamWeaver Labs. Committed to building open, high-leverage creative computing platforms powered by Anthropic's frontier foundation models.
+          <p class="mt-3 text-slate-300 text-sm leading-relaxed max-w-3xl">
+            Independent software engineer, creative technologist, and systems architect. Founder and sole engineer behind <strong class="text-white font-semibold">DigiDreamWeaver Labs</strong>. Specializing in autonomous LLM agent reasoning, client-side WebAudio DSP, acoustic phonetics, procedural vector mathematics, and native systems diagnostics. Committed to local-first architecture, algorithmic determinism, and open copyleft software.
           </p>
           <div class="mt-6 flex flex-wrap items-center justify-center md:justify-start gap-4">
             <a href="https://github.com/mkomorny" target="_blank" rel="noopener noreferrer" 
-               class="px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-mono transition-all">
-              github.com/mkomorny
+               class="px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-mono transition-all flex items-center gap-2">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>github.com/mkomorny</span>
+            </a>
+            <a href="https://github.com/mkomorny/mkomorny" target="_blank" rel="noopener noreferrer"
+               class="px-4 py-2 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs font-mono transition-all">
+              Profile README & Blueprint →
             </a>
             <span class="text-xs text-slate-500 font-mono">GPL-3.0 Copyleft Advocate • Local-First Architecture</span>
           </div>
@@ -478,18 +1390,80 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-12 px-6 border-t border-[#161a29] bg-[#050608] text-center text-xs text-slate-500 font-mono">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div>
-        © 2026 DigiDreamWeaver Labs (Miranda Komorny). All original software licensed under GPL-3.0.
+  <footer class="py-14 px-6 border-t border-[#161a29] bg-[#050608] text-center text-xs text-slate-400 font-mono">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="text-left">
+        <div class="text-slate-300 font-semibold mb-1">© 2026 DigiDreamWeaver Labs (Miranda Komorny)</div>
+        <div class="text-slate-500 text-[11px]">All original software licensed under GNU General Public License v3.0 (GPL-3.0).</div>
       </div>
-      <div class="flex items-center gap-6">
-        <a href="https://github.com/mkomorny" class="hover:text-amber-400 transition-colors">GitHub Profile</a>
-        <a href="https://github.com/mkomorny/mkomorny" class="hover:text-amber-400 transition-colors">Profile README</a>
-        <a href="#claude-mcp" class="hover:text-amber-400 transition-colors">Architecture Spec</a>
+      <div class="flex flex-wrap items-center gap-6">
+        <a href="#domains" class="hover:text-amber-400 transition-colors">Domains</a>
+        <a href="#featured" class="hover:text-amber-400 transition-colors">Featured Systems</a>
+        <a href="#catalog" class="hover:text-amber-400 transition-colors">All Builds</a>
+        <a href="#philosophy" class="hover:text-amber-400 transition-colors">Philosophy</a>
+        <a href="https://github.com/mkomorny" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors">GitHub Profile</a>
       </div>
     </div>
   </footer>
+
+  <!-- Interactive Search and Filter Script -->
+  <script>
+    let activeCategory = 'all';
+    const searchInput = document.getElementById('build-search');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.build-card');
+    const visibleCountEl = document.getElementById('visible-count');
+    const totalCountEl = document.getElementById('total-count');
+    const noResultsEl = document.getElementById('no-results');
+
+    totalCountEl.textContent = cards.length;
+
+    function updateVisibility() {
+      const query = (searchInput.value || '').toLowerCase().trim();
+      let count = 0;
+
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        const searchText = (card.getAttribute('data-search') || '').toLowerCase();
+        
+        const matchesCategory = (activeCategory === 'all' || cat === activeCategory);
+        const matchesSearch = (!query || searchText.includes(query));
+
+        if (matchesCategory && matchesSearch) {
+          card.classList.remove('hidden');
+          count++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      visibleCountEl.textContent = count;
+      if (count === 0) {
+        noResultsEl.classList.remove('hidden');
+      } else {
+        noResultsEl.classList.add('hidden');
+      }
+    }
+
+    function filterCategory(cat) {
+      activeCategory = cat;
+      filterButtons.forEach(btn => {
+        if (btn.getAttribute('data-cat') === cat) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      updateVisibility();
+    }
+
+    function resetFilters() {
+      searchInput.value = '';
+      filterCategory('all');
+    }
+
+    searchInput.addEventListener('input', updateVisibility);
+  </script>
 
 </body>
 </html>
